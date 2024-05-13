@@ -10,13 +10,8 @@ const todosSlice = createSlice({
         { id: 2, title: 'Hardcoded Todo 2', description: 'Hardcoded Description 2', completed: false },
     ],
     reducers: {
-        addTodo: {
-            reducer: (state, action) => {
-                state.unshift(action.payload); // Add new todo at the start of the array
-            },
-            prepare: ({ title, description }) => {
-                return { payload: { id: nextTodoId++, title, description, completed: false } };
-            },
+        addTodo: (state, action) => {
+            state.unshift({ id: Date.now(), title: action.payload.title,description: action.payload.description, completed: false });
         },
         toggleTodo: (state, action) => {
             const todo = state.find(todo => todo.id === action.payload);

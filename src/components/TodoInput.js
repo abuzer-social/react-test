@@ -23,15 +23,15 @@ const TodoInput = () => {
     return (
         <div className="todo-input container w-25">
             <div className="form-group mb-4">
-                 <label  class="form-label fw-bold">Title</label>
+                 <label  className="form-label fw-bold">Title</label>
                 <input  value={title} onChange={e => setTitle(e.target.value)} className="form-control" placeholder="Title" />
                 {titleError && <div className="text-danger">Title is required</div>}
             </div>
             <div className="form-group  mb-2">
 
                 
-            <label  class="form-label fw-bold">Description</label>
-            <textarea class="form-control"  value={description} onChange={e => setDescription(e.target.value)} rows="5" ></textarea>
+            <label  className="form-label fw-bold">Description</label>
+            <textarea className="form-control" value={description} onChange={e => setDescription(e.target.value)} rows="5" ></textarea>
                
             </div>
             
